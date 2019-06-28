@@ -3,7 +3,7 @@
 
 # worldheritagewikipedia
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh///master?urlpath=rstudio)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/benmarwick/worldheritagewikipedia/master?urlpath=rstudio)
 
 This repository contains the data and code for our paper:
 
@@ -27,14 +27,14 @@ Please cite this compendium as:
 ### How to download or install
 
 You can download the compendium as a zip from from this URL:
-</archive/master.zip>
+<https://github.com/benmarwick/worldheritagewikipedia/archive/master.zip>
 
 Or you can install this compendium as an R package,
 worldheritagewikipedia, from GitHub with:
 
 ``` r
 # install.packages("devtools")
-remotes::install_github("/")
+remotes::install_github("benmarwick/worldheritagewikipedia")
 ```
 
 ### Licenses
