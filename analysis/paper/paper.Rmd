@@ -32,6 +32,11 @@ knitr::opts_chunk$set(
 
 # Introduction
 
+Heritage is the processes and outcomes of people engaging with elements of the past – material and immaterial – and attributing social and cultural meanings to them in the present (Smith 2006; Harrison 2013). These are important to understand because they shape peoples' identidies and influence how they think and behave towards other people. Digital heritage are these engagements that are enabled by the Internet (Bonacchi and Krzyzanska 2019), leaving traces that can be identified and quantified using data science methods. Recent work on digital heritage has opened a new field of study.s
+
+
+• Represents a major turn from post- modernism, critical theory, & deeply qualitative, towards digital heritage ontologies, data-intensive ethnographies, role of heritage scholars
+
 # Background
 
 # Methods
