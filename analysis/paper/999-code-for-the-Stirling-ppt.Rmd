@@ -31,7 +31,7 @@ wh_wiki_talk_pages <-  readRDS(here::here("data",
 # from https://whc.unesco.org/en/syndication
 wh_unesco <- readxl::read_excel(here::here("data",
                                            "whc-sites-2018.xls")) %>%
-  filter(category %in% c("Cultural", "Mixed"))
+  filter(category %in% c("Cultural"))
 
 library("rnaturalearth")
 library("rnaturalearthdata")
