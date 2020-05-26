@@ -8,29 +8,25 @@ title: "Community Data Science meets Digital Heritage: Controversies about World
 library(tidyverse)
 
 # load the random pages
-ten_k_random_wp_pages <- readRDS(here::here("data", "random_page_data_tbl.rds"))
+ten_k_random_wp_pages <- readRDS(here::here("analysis/data/raw_data/random_page_data_tbl.rds"))
 
 # load the random pages revision histories
-ten_k_random_wp_pages_lst <- readRDS(here::here("data", "random_page_data_lst.rds"))
+ten_k_random_wp_pages_lst <- readRDS(here::here("analysis/data/raw_data/random_page_data_lst.rds"))
 
 # all WH sites with WP pages (n = 584)
 page_data_for_all_pages <-
-  readRDS(here::here("data",
-                     "page_data_for_all_pages.rds"))
+  readRDS(here::here("analysis/data/raw_data/page_data_for_all_pages.rds"))
 
 # all WH sites, with and without WP pages (n = 846)
 wh_wiki_table <-
-  read_csv(here::here("data",
-                      "wh_wiki_table.csv"))
+  readxl::read_excel(here::here("analysis/data/raw_data/whc-sites-2019.xls"))
 
 # the talk pages for all WH sites, with WP pages (n = 846)
-wh_wiki_talk_pages <-  readRDS(here::here("data",
-                     "wh_wiki_table_talk_page_content.rds"))
+wh_wiki_talk_pages <-  readRDS(here::here("analysis/data/raw_data/wh_wiki_table_talk_page_content.rds"))
 
 # all WH sites according to UNESCO
 # from https://whc.unesco.org/en/syndication
-wh_unesco <- readxl::read_excel(here::here("data",
-                                           "whc-sites-2018.xls")) %>%
+wh_unesco <- wh_wiki_table %>%
   filter(category %in% c("Cultural"))
 
 library("rnaturalearth")
