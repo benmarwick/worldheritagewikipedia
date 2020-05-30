@@ -6,12 +6,17 @@ library("rnaturalearthdata")
 world <-
   ne_countries(scale = "medium", returnclass = "sf")
 
-page_data_for_all_pages <-
-  read_rds(here::here("analysis/data/raw_data/page_data_for_all_pages.rds"))
+# all WH sites with WP pages (n = 584)
+if(!exists("page_data_for_all_pages")){
+  page_data_for_all_pages <-
+    readRDS(here::here("analysis/data/raw_data/page_data_for_all_pages.rds"))
+}
 
 # all WH sites, with and without WP pages (n = 846)
+if(!exists("wh_wiki_table")){
 wh_wiki_table <-
   readxl::read_excel(here::here("analysis/data/raw_data/whc-sites-2019.xls"))
+}
 
 # get country of site from location text
 # Laos, Czech Republic, Micronesia, Zimbabwe, South Sudan, Chad,
@@ -80,8 +85,9 @@ wh_wk_country_counts_hist <-
          aes(n)) +
   geom_histogram() +
   annotate("text", x = 15, y = 30,
-           label = str_glue('Median = {median_number_wp_pages_per_country} WP pages/country\nMode = {mode_number_wp_pages_per_country} WP pages/country'),
+           label = str_glue('Median = {median_number_wp_pages_per_country} WP articles/country\nMode = {mode_number_wp_pages_per_country} WP articles/country'),
            size = 2) +
+  labs(x = "Number of CS-WHL articles") +
   theme_nogrid(12)
 
 wh_wk_country_counts_bar <-
