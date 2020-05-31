@@ -91,7 +91,8 @@ main_plot <-
   geom_point(
     aes(colour = factor(hdbscan_out$cluster),
       #  size =  pages_umap_input_selected$page_wordcount_norm  ,
-        shape = pages_umap_input$continent
+        shape = pages_umap_input$continent,
+      size = 3
     )) +
  # scale_size(range = c(2,7), guide = FALSE) +
   scale_shape(name = "Continent") +

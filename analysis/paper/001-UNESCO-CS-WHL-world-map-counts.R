@@ -42,6 +42,7 @@ wh_unesco_countries <-
 
 wh_unesco_countries_count <-
   wh_unesco_countries %>%
+  separate_rows(states_name_en, sep = ",") %>%
   count(country)
 
 median_number_unesco_sites_per_country <-
@@ -69,7 +70,7 @@ sf_map_data_unesco <-
   left_join(wh_unesco_countries_count,
             by = c( 'name_long' = 'country')) %>%
   select(name, n, geometry) %>%
-  # mutate(n = ifelse(is.na(n), 0, n)) %>%
+  mutate(n = ifelse(is.na(n), 0, n)) %>%
   filter(name != "Antartica")
 
 wh_country_unesco_count_map <-
