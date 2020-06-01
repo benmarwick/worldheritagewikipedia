@@ -82,8 +82,8 @@ tibble(clus = names(table(hdbscan_out$cluster)),
 
 n_clusters <- nrow(clus_tbl) -1
 
-n_no_cluster <- clus_tbl %>% filter(clus == 0) %>% pull(n)
-prop_no_cluster <- n_no_cluster / sum(clus_tbl$n)
+n_no_cluster <- clus_tbl %>% filter(clus == 0) %>% pull(n) %>% unname
+prop_no_cluster <- (n_no_cluster / sum(clus_tbl$n)) %>% unname
 
 main_plot <-
   ggplot(pages_umap_output,
@@ -94,7 +94,7 @@ main_plot <-
         shape = pages_umap_input$continent,
       size = 3
     )) +
- # scale_size(range = c(2,7), guide = FALSE) +
+  scale_size(guide = FALSE) +
   scale_shape(name = "Continent") +
   scale_color_viridis_d(guide = FALSE) +
   theme_minimal() +
@@ -153,10 +153,10 @@ sub_plot <-
 # plot plus subplot
 main_plot +
   annotation_custom(ggplotGrob(sub_plot),
-                    xmin = -8,
-                    xmax = -4,
-                    ymin= -5,
-                    ymax= -2.5)
+                    xmin = 6,
+                    xmax = 4,
+                    ymin= 5.5,
+                    ymax= 3.5)
 
 ggsave(here::here("analysis/figures/wh_country_umap_hdbscan.png"),
                   width = 10,
