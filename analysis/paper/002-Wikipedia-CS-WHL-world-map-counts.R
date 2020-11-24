@@ -127,7 +127,7 @@ sf_map_data <-
    left_join(wh_wk_country_counts,
             by = c( 'name' = 'country2')) %>%
   select(name, n, geometry) %>%
-  mutate(n = ifelse(is.na(n), 0, n)) %>%
+ # mutate(n = ifelse(is.na(n), 0, n)) %>%
   filter(name != "Antartica") # %>% sf::st_drop_geometry() %>% View
 
 ###
@@ -138,7 +138,7 @@ sf_map_data <-
 wh_wk_country_count_map <-
   ggplot(data = sf_map_data) +
   geom_sf(aes(fill = n), lwd = 0) +
-  scale_fill_viridis_c(# na.value="black",
+  scale_fill_viridis_c(na.value="black",
                        name = "Number of\nWikipedia articles\non CS-WHL") +
   coord_sf(ylim = c(-50, 90), datum = NA) +
   theme_minimal(base_size = 8)  +
@@ -194,16 +194,16 @@ sf_map_data_unesco %>%
     name == "United States" ~ "United States of America",
     name == "Czech Rep." ~ "Czech Repu", # no idea why
     TRUE ~ as.character(name))) %>%
-  left_join(sf_map_data_unesco_wk_prop) %>%
-  mutate(prop_sites_with_wp_articles = ifelse(is.na(prop_sites_with_wp_articles),
-                                              0,
-                                              prop_sites_with_wp_articles))
+  left_join(sf_map_data_unesco_wk_prop)# %>%
+ # mutate(prop_sites_with_wp_articles = ifelse(is.na(prop_sites_with_wp_articles),
+ #                                             0,
+ #                                             prop_sites_with_wp_articles))
 
 
 wh_wk_country_prop_map <-
   ggplot(data = sf_map_data_unesco_wk_prop_sf) +
   geom_sf(aes(fill = prop_sites_with_wp_articles), lwd = 0) +
-  scale_fill_viridis_c( #na.value="black",
+  scale_fill_viridis_c(na.value="black",
                        name = "Proportion of CS-WHL\nsites in a country that\nhave Wikipedia\narticles") +
   coord_sf(ylim = c(-50, 90), datum = NA) +
   theme_minimal(base_size = 8)  +

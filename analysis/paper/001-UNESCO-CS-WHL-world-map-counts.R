@@ -40,6 +40,17 @@ wh_unesco_countries <-
     TRUE ~ as.character(states_name_en)
   ))
 
+
+wh_unesco_countries$states_name_en <-
+  ifelse(str_detect(wh_unesco_countries$name_en, "Greenland"),
+         "Greenland",
+         wh_unesco_countries$states_name_en)
+
+wh_unesco_countries$country <-
+  ifelse(str_detect(wh_unesco_countries$name_en, "Greenland"),
+         "Greenland",
+         wh_unesco_countries$country)
+
 wh_unesco_countries_count <-
   wh_unesco_countries %>%
   separate_rows(states_name_en, sep = ",") %>%
@@ -70,7 +81,8 @@ sf_map_data_unesco <-
   left_join(wh_unesco_countries_count,
             by = c( 'name_long' = 'country')) %>%
   select(name, n, geometry) %>%
-  mutate(n = ifelse(is.na(n), 0, n)) %>%
+  # sites with no CHL-WS: 0 or NA?
+  # mutate(n = ifelse(is.na(n), 0, n)) %>%
   filter(name != "Antartica")
 
 wh_country_unesco_count_map <-

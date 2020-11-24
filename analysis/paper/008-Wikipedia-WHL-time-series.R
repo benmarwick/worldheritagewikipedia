@@ -73,12 +73,14 @@ bind_rows(
 
 ) %>%
   ggplot() +
-  geom_density(aes(as.numeric(edit_span / 365),
+  # seconds to years
+  geom_density(aes(as.numeric(edit_span / 31536000),
                    fill = source),
                alpha = 0.3) +
   geom_vline(xintercept = year(Sys.Date()) - 2001,
              colour = "red") +
-  annotate("text", x = 15, y = 0.2, label = "start of Wikipedia → ") +
+  annotate("text", x = 15, y = 0.2,
+           label = "start of Wikipedia → ") +
   xlab("Age of Wikipedia page (years)") +
   scale_fill_viridis_d(labels = c("Random",
                                   "CS-WHL"),
