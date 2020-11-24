@@ -1,8 +1,8 @@
 .Rproj.user
 .Rhistory
 .Rdata
-*.DS_Store*
+**/.DS_Store
 /analysis/data/raw_data/
 .DS_Store
-/analysis/.DS_Store
-/analysis/peer_review/
+analysis/.DS_Store
+analysis/paper/peer_review/
