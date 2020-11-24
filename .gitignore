@@ -1,6 +1,8 @@
 .Rproj.user
 .Rhistory
-.RData
-/analysis/data/raw_data
+.Rdata
+*.DS_Store*
+/analysis/data/raw_data/
 .DS_Store
 /analysis/.DS_Store
+/analysis/peer_review/
