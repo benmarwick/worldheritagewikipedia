@@ -1,4 +1,5 @@
 ## Basic qualities of the content of WP articles about WH sites
+library(tidyverse)
 
 # load the random pages
 if(!exists("ten_k_random_wp_pages")){
@@ -158,7 +159,7 @@ page_data_for_all_pages %>%
       filter(page_views_last_n_days_total > 1e5),
     segment.size  = 0.2,
    # force = 0,
-    size = 1.7,
+    size = 2.5,
     segment.color = "grey50",
     nudge_x = -0.1,
     nudge_y = -0.1,
@@ -197,15 +198,25 @@ page_data_for_all_pages %>%
   select(Site)
 
 library(patchwork)
-layout <- "
-AAAA
-BBCC
-BBCC
-"
-basic_content_plot + basic_consumption_plot + basic_consumption_scatter_plot +
-  plot_layout(design = layout)
 
-ggsave(here::here("analysis/figures/wh_wikipedia_articles_basic.png"),
+# content plot
+basic_content_plot
+
+ggsave(here::here("analysis/figures/wh_wikipedia_articles_basic_content.png"),
        width = 12,
-       height = 8,
+       height = 4,
+       dpi = 300)
+
+# consumption plot
+design <- "
+  11
+  22
+  22
+"
+basic_consumption_plot + basic_consumption_scatter_plot +
+  plot_layout(design = design)
+
+ggsave(here::here("analysis/figures/wh_wikipedia_articles_basic_consumption.png"),
+       width = 12,
+       height = 12,
        dpi = 300)
