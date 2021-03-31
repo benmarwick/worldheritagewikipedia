@@ -12,6 +12,7 @@ RUN . /etc/environment \
   # e.g. need this for ggforce::geom_sina
   && sudo apt-get update \
   && sudo apt-get install libudunits2-dev libcairo2-dev libproj-dev libgdal-dev -y \
+  && R -e "devtools::install_github('benmarwick/rrtools', dep=TRUE)" \
   # build this compendium package
   && R -e "devtools::install('/worldheritagewikipedia', dep=TRUE)" \
   # render the manuscript into a docx, you'll need to edit this if you've
