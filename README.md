@@ -8,7 +8,6 @@
 
 This repository contains the data and code for our paper:
 
-<<<<<<< HEAD
 > Marwick,
 > B.[![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-7879-4531)
 > and P. Smith, (2021). World Heritage Sites on Wikipedia: Cultural
@@ -22,34 +21,16 @@ Our pre-print is online here:
 > and P. Smith, (2021). World Heritage Sites on Wikipedia: Cultural
 > Heritage Activism in a Context of Constrained Agency. Accessed 31 Mar
 > 2021. Online at <https://doi.org/10.31235/osf.io/7gvza>
-=======
-> Marwick, B and P. Smith, (2021). World Heritage Sites on Wikipedia:
-> Cultural Heritage Activism in a Context of Constrained Agency. *Big
-> Data and Society* <https://doi.org/xxx/xxx>
-
-Our pre-print is online here:
-
-> Marwick, B and P. Smith, (2021). World Heritage Sites on Wikipedia:
-> Cultural Heritage Activism in a Context of Constrained Agency.
-> Accessed 31 Mar 2021. Online at
-> <https://doi.org/10.31235/osf.io/7gvza>
->>>>>>> 79b6fdb49838bceadde07ddcddfe3bab470cf81d
 
 ### How to cite
 
 Please cite this compendium as:
 
-<<<<<<< HEAD
 > Marwick,
 > B.[![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-7879-4531)
 > and P. Smith, (2021). Compendium of R code and data for World Heritage
 > Sites on Wikipedia: Cultural Heritage Activism in a Context of
 > Constrained Agency. Accessed 31 Mar 2021. Online at
-=======
-> Marwick, B and P. Smith, (2021). Compendium of R code and data for
-> World Heritage Sites on Wikipedia: Cultural Heritage Activism in a
-> Context of Constrained Agency. Accessed 31 Mar 2021. Online at
->>>>>>> 79b6fdb49838bceadde07ddcddfe3bab470cf81d
 > <https://doi.org/10.17605/OSF.IO/AY27G>
 
 ## Contents
