@@ -88,6 +88,14 @@ ggplot(page_data_for_all_pages_basic_qualities_long,
   # ggtitle("Basic qualities about Wikipedia article content") +
   NULL
 
+# content plot
+basic_content_plot
+
+ggsave(here::here("analysis/figures/wh_wikipedia_articles_basic_content.png"),
+       width = 12,
+       height = 4,
+       dpi = 300)
+
 ## Basic qualities of the consumption of WP articles about WH sites
 
 library(ggrepel)
@@ -199,17 +207,10 @@ page_data_for_all_pages %>%
 
 library(patchwork)
 
-# content plot
-basic_content_plot
-
-ggsave(here::here("analysis/figures/wh_wikipedia_articles_basic_content.png"),
-       width = 12,
-       height = 4,
-       dpi = 300)
-
 # consumption plot
 design <- "
   11
+  22
   22
   22
 "
@@ -217,6 +218,6 @@ basic_consumption_plot + basic_consumption_scatter_plot +
   plot_layout(design = design)
 
 ggsave(here::here("analysis/figures/wh_wikipedia_articles_basic_consumption.png"),
-       width = 12,
-       height = 12,
+       width = 10,
+       height = 10,
        dpi = 300)
