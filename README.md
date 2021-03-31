@@ -56,7 +56,7 @@ worldheritagewikipedia, from GitHub with:
 
 ``` r
 # install.packages("devtools")
-remotes::install_github("benmarwick/worldheritagewikipedia")
+devtools::install_github("benmarwick/worldheritagewikipedia")
 ```
 
 ### Licenses

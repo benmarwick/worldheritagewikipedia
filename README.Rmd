@@ -49,7 +49,7 @@ Or you can install this compendium as an R package, worldheritagewikipedia, from
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
-remotes::install_github("benmarwick/worldheritagewikipedia")
+devtools::install_github("benmarwick/worldheritagewikipedia")
 ```
 
 
